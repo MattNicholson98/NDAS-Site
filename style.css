@@ -1,0 +1,316 @@
+/* ================================
+   NDAS - Nicholson Data Analytics Solutions
+   Dark Theme + Animated Hero Gradient + Faded Bottom
+   ================================ */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #E6E6E6;
+  background-color: #0E1116; /* deep charcoal background */
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  color: #00AEEF; /* NDAS blue accent */
+}
+
+/* Navbar */
+.navbar {
+  background-color: #0D1B2A; /* dark navy */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #E6E6E6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00AEEF;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: linear-gradient(-45deg, #0D1B2A, #1B263B, #01688d, #0078A0);
+  background-size: 400% 400%;
+  color: #E6E6E6;
+  text-align: center;
+  padding: 8rem 2rem;
+  animation: gradientShift 15s ease infinite;
+  overflow: hidden;
+}
+
+/* Faded Bottom Overlay */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 150px; /* fade height */
+  background: linear-gradient(to bottom, rgba(14,17,22,0) 0%, #0E1116 100%);
+  pointer-events: none;
+}
+
+/* Hero Text */
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 2s ease forwards;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #CFCFCF;
+  animation: fadeIn 3s ease forwards;
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: #00AEEF;
+  color: #0E1116;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+  animation: fadeIn 4s ease forwards;
+}
+
+.btn-primary:hover {
+  background-color: #0092CA;
+  transform: translateY(-2px);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid #00AEEF;
+  color: #00AEEF;
+  padding: 0.5rem 1.25rem; /* smaller size */
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.9rem; /* slightly smaller text */
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  margin-top: 1rem; /* pushes button down a little */
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background-color: #00AEEF;
+  color: #0E1116;
+  transform: translateY(-2px);
+}
+
+
+/* Gradient Animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Fade-in Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* About */
+.about {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #161A22; /* slightly lighter than body */
+  border-top: 1px solid #1F2933;
+  border-bottom: 1px solid #1F2933;
+}
+
+.about p {
+  max-width: 800px;
+  margin: 1rem auto;
+  color: #CFCFCF;
+  font-size: 1.05rem;
+}
+
+/* Services */
+.services {
+  background-color: #0E1116;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: #161A22;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+  color: #00AEEF;
+  margin-bottom: 0.75rem;
+}
+
+.card p {
+  color: #C0C0C0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+}
+
+/* ================================
+   SUBPAGE HERO + CONTENT STYLING
+   ================================ */
+
+.subpage-hero {
+  background: linear-gradient(to bottom right, #0D1B2A, #1B263B);
+  text-align: center;
+  padding: 6rem 2rem;
+  color: #E6E6E6;
+  border-bottom: 2px solid #00AEEF;
+  animation: fadeIn 1.5s ease;
+}
+
+.subpage-hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #00AEEF;
+}
+
+.subpage-hero p {
+  font-size: 1.1rem;
+  color: #CFCFCF;
+}
+
+/* Subpage Content Sections */
+.content-section {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #161A22;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  animation: fadeIn 1.5s ease;
+}
+
+.content-section h2 {
+  color: #00AEEF;
+  margin-bottom: 1.5rem;
+}
+
+.content-section p {
+  margin-bottom: 1.2rem;
+  color: #D1D5DB;
+}
+
+/* Pricing List */
+.pricing-list {
+  list-style: none;
+  margin: 2rem 0;
+  padding-left: 0;
+}
+
+.pricing-list li {
+  background: #1B2230;
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #00AEEF;
+  border-radius: 6px;
+  color: #D1D5DB;
+  transition: transform 0.3s ease;
+}
+
+.pricing-list li:hover {
+  transform: translateX(5px);
+}
+
+/* ================================
+   FOOTER
+   ================================ */
+.footer {
+  background-color: #0D1B2A;
+  color: #E6E6E6;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid #1F2933;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #B0B0B0;
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero {
+    padding: 6rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .service-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .content-section {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+}
